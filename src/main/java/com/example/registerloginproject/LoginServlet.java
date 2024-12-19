@@ -22,14 +22,14 @@ public class LoginServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        // Retrieve email and password
+
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
         try {
             User user = getUser(email, password);
             if (user != null) {
-                // If authenticated, create session attribute and redirect user to appropriate profile
+
                 HttpSession session = request.getSession();
                 session.setAttribute("name", user.getName());
                 session.setAttribute("email", user.getEmail());

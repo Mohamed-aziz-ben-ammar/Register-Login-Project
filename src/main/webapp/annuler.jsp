@@ -81,7 +81,7 @@
     <a href="passengerprofile.jsp" class="btn">Back</a>
 </div>
 
-<!-- Existing Filter Form and Ride Display Table (unchanged) -->
+
 
 <h2>My Reservations</h2>
 <form method="post" action="annuler.jsp">

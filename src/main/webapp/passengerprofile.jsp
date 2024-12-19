@@ -44,24 +44,24 @@
         }
         .refresh-btn {
             position: absolute;
-            top: 130px; /* Adjust to position it below the "Send Review" button */
-            left: 10px; /* Align it horizontally with the other buttons */
-            background-color: #2196F3; /* Blue background for the button */
-            color: white; /* White text color */
-            border: none; /* Remove borders */
-            border-radius: 5px; /* Rounded corners */
-            padding: 10px 20px; /* Padding for the button */
-            text-decoration: none; /* Remove underline from links */
-            font-size: 16px; /* Adjust font size */
-            font-family: Arial, sans-serif; /* Font styling */
-            cursor: pointer; /* Pointer cursor on hover */
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
-            transition: all 0.3s ease; /* Smooth transition for hover effects */
+            top: 130px;
+            left: 10px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
         }
 
         .refresh-btn:hover {
-            background-color: #1e88e5; /* Darker blue on hover */
-            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+            background-color: #1e88e5;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
         }
 
         .logout-btn {
@@ -79,46 +79,46 @@
 
         .annuler-btn {
             position: absolute;
-            top: 20px; /* Adjust this value to move it further down */
-            left: 10px; /* Adjust this value to move it further to the left */
-            background-color: #ff4d4d; /* Red background for the button */
-            color: white; /* White text color */
-            border: none; /* Remove borders */
-            border-radius: 5px; /* Rounded corners */
-            padding: 10px 20px; /* Padding for the button */
-            text-decoration: none; /* Remove underline from links */
-            font-size: 16px; /* Adjust font size */
-            font-family: Arial, sans-serif; /* Font styling */
-            cursor: pointer; /* Pointer cursor on hover */
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
-            transition: all 0.3s ease; /* Smooth transition for hover effects */
+            top: 20px;
+            left: 10px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
         }
 
         .annuler-btn:hover {
-            background-color: #ff1a1a; /* Darker red on hover */
-            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+            background-color: #ff1a1a;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
         }
 
         .review-btn {
             position: absolute;
-            top: 70px; /* Adjust this value to position it below the "Cancel A Reservation" button */
-            left: 10px; /* Align it with the "Cancel A Reservation" button */
-            background-color: #4CAF50; /* Green background for the button */
-            color: white; /* White text color */
-            border: none; /* Remove borders */
-            border-radius: 5px; /* Rounded corners */
-            padding: 10px 20px; /* Padding for the button */
-            text-decoration: none; /* Remove underline from links */
-            font-size: 16px; /* Adjust font size */
-            font-family: Arial, sans-serif; /* Font styling */
-            cursor: pointer; /* Pointer cursor on hover */
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
-            transition: all 0.3s ease; /* Smooth transition for hover effects */
+            top: 70px;
+            left: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
         }
 
         .review-btn:hover {
-            background-color: #45a049; /* Darker green on hover */
-            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+            background-color: #45a049;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
         }
 
 
@@ -242,7 +242,7 @@
             for (String rideId : selectedRides) {
                 int rideIdInt = Integer.parseInt(rideId);
                 int seatsToReserve = Integer.parseInt(request.getParameter("seats_" + rideIdInt));
-                int userId = 1;  // Replace with actual logged-in user ID
+                int userId = 1;
 
                 try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/carpooling", "root", "15971597");
                      PreparedStatement ps = conn.prepareStatement(
@@ -280,7 +280,7 @@
     </thead>
     <tbody>
     <%
-        int userId = 1;  // Replace with actual logged-in user ID
+        int userId = 1;
         String myReservationsQuery = "SELECT res.id AS reservation_id, r.id AS ride_id, r.start_point, r.destination, r.date_time, res.seats_reserved " +
                 "FROM reservations res " +
                 "JOIN rides r ON res.ride_id = r.id " +
@@ -309,12 +309,12 @@
     %>
     </tbody>
 </table>
-<!-- Logout Button at the Top-Right -->
+
 <a href="index.html" class="logout-btn">Logout</a>
 
-<!-- Annuler Button at the Bottom of the Page -->
+
 <a href="annuler.jsp" class="annuler-btn">Cancel A Reservation</a>
-<!-- review Button at the Bottom of the Page -->
+
 <a href="review.jsp" class="review-btn">Send Review</a>
 
 </body>

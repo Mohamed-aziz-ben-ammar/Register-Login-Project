@@ -1,13 +1,13 @@
 package com.example.registerloginproject;
-// Jakarta EE (Servlets)
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;  // For HTTP session management
+import jakarta.servlet.http.HttpSession;
 
-// SQL
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -15,7 +15,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-// Other utilities (optional, depending on your needs)
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;

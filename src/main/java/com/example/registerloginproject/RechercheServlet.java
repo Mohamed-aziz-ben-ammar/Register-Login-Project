@@ -32,17 +32,16 @@ public class RechercheServlet extends HttpServlet {
         String dbPassword = "15971597";
 
         try {
-            // Connect to database
+
             Connection connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
 
-            // SQL Query with JOIN to get driver name
+
             String sql = "SELECT r.id AS ride_id, u.name AS driver_name, r.start_point, r.destination, r.date_time, r.available_seats, r.price " +
                     "FROM rides r " +
                     "JOIN users u ON r.driver_id = u.id";
             PreparedStatement statement = connection.prepareStatement(sql);
             ResultSet resultSet = statement.executeQuery();
 
-            // Store results in a list
             ArrayList<Ride> rides = new ArrayList<>();
             while (resultSet.next()) {
                 Ride ride = new Ride();
@@ -56,15 +55,15 @@ public class RechercheServlet extends HttpServlet {
                 rides.add(ride);
             }
 
-            // Set rides in request scope
+
             request.setAttribute("rides", rides);
 
-            // Close resources
+
             resultSet.close();
             statement.close();
             connection.close();
 
-            // Forward to JSP
+
             request.getRequestDispatcher("ride_list.jsp").forward(request, response);
 
         } catch (Exception e) {

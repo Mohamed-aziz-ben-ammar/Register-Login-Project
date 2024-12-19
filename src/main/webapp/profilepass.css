@@ -1,4 +1,4 @@
-/* General Styles */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,13 +7,13 @@ body {
     background-color: #f9f9f9;
 }
 
-/* Main Container */
+
 .container {
     display: flex;
     height: 100vh;
 }
 
-/* Sidebar */
+
 .sidebar {
     background-color: #fff;
     width: 250px;
@@ -68,7 +68,7 @@ body {
     border-radius: 4px;
 }
 
-/* Ride List */
+
 .ride-list {
     background-color: #fff;
     padding: 20px;
@@ -95,7 +95,7 @@ body {
     margin-right: 10px;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;

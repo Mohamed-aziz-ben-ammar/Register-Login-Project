@@ -70,12 +70,12 @@
         }
 
         .logout-btn:hover {
-            background-color: #ff1a1a; /* Darker red on hover */
-            transform: scale(1.05); /* Slight zoom effect on hover */
+            background-color: #ff1a1a;
+            transform: scale(1.05);
         }
 
         .logout-btn:active {
-            transform: scale(0.95); /* Slightly shrink on click */
+            transform: scale(0.95);
         }
 
     </style>
@@ -115,7 +115,7 @@
         String dateTime = request.getParameter("date_time");
         int availableSeats = Integer.parseInt(request.getParameter("available_seats"));
         double price = Double.parseDouble(request.getParameter("price"));
-        int driverId = 1; // Replace with actual logged-in driver ID
+        int driverId = 1;
 
         try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/carpooling", "root", "15971597");
              PreparedStatement ps = conn.prepareStatement(
@@ -152,7 +152,7 @@
         </thead>
         <tbody>
         <%
-            int driverId = 1; // Replace with actual logged-in driver ID
+            int driverId = 1;
             String myRidesQuery = "SELECT id, start_point, destination, date_time, available_seats, price, created_at FROM rides WHERE driver_id = ?";
 
             try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/carpooling", "root", "15971597");
